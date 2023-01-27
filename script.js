@@ -70,3 +70,39 @@ const products = [{
 
 products.forEach(products => products.price = products.price * 0.85);
 console.log (products);
+
+
+
+// Необходимо вывести в консоль массив продуктов в котором есть хоть одна фотография используя метод filter. Исходные данные - массив products.
+// Необходимо отсортировать массив products используя метод sort по цене, начиная с самой маленькой, заканчивая самой большой ценой, после чего вывести отсортированный массив в консоль.
+
+
+const product = [{
+      id: 3,
+      price: 127,
+      photos: [
+         "1.jpg",
+         "2.jpg",
+      ],
+   },
+   {
+      id: 5,
+      price: 499,
+      photos: [],
+   },
+   {
+      id: 10,
+      price: 26,
+      photos: [
+         "3.jpg",
+      ],
+   },
+   {
+      id: 8,
+      price: 78,
+   },
+];
+
+console.log(product.filter(product => 'photos' in product && product.photos.length != 0));
+console.log(product.sort((product1, product2) => product1.price - product2.price));
+
